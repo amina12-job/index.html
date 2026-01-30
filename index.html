@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luxembourg Job Application</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f6f8;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 700px;
+        margin: 50px auto;
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+    h2 {
+        text-align: center;
+        color: #0b3d91;
+        margin-bottom: 25px;
+    }
+    label {
+        display: block;
+        margin: 15px 0 5px;
+        font-weight: bold;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea,
+    select {
+        width: 100%;
+        padding: 10px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        font-size: 14px;
+    }
+    textarea {
+        resize: vertical;
+        min-height: 80px;
+    }
+    input[type="file"] {
+        margin-top: 10px;
+    }
+    .checkbox-container {
+        display: flex;
+        align-items: center;
+        margin: 15px 0;
+    }
+    .checkbox-container input {
+        margin-right: 10px;
+    }
+    button {
+        background-color: #0b3d91;
+        color: #fff;
+        border: none;
+        padding: 12px 25px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+        width: 100%;
+        margin-top: 20px;
+    }
+    button:hover {
+        background-color: #062e6b;
+    }
+    .whatsapp-button {
+        display: none; /* hidden by default */
+        margin-top: 20px;
+        text-align: center;
+    }
+    .whatsapp-button a {
+        background-color: #25D366;
+        color: #fff;
+        padding: 12px 25px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-size: 16px;
+        display: inline-block;
+    }
+    .whatsapp-button a:hover {
+        background-color: #1ebe57;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h2>Luxembourg Job Application Form</h2>
+    <form id="jobForm" action="#" method="post" enctype="multipart/form-data">
+        <!-- Personal Info -->
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="address">Address (City, Country)</label>
+        <input type="text" id="address" name="address" required>
+
+        <!-- Job Details -->
+        <label for="job">Job Title / Role You Are Applying For</label>
+        <select id="job" name="job" required>
+            <option value="">--Select Job--</option>
+            <option value="Software Engineer">Software Engineer</option>
+            <option value="Data Analyst">Data Analyst</option>
+            <option value="Marketing Specialist">Marketing Specialist</option>
+            <option value="Project Manager">Project Manager</option>
+            <option value="Customer Support">Customer Support</option>
+        </select>
+
+        <label for="location">Preferred Location in Luxembourg (Optional)</label>
+        <input type="text" id="location" name="location">
+
+        <!-- CV Upload -->
+        <label for="cv">Upload Your CV</label>
+        <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required>
+
+        <!-- Additional Info -->
+        <label for="cover">Cover Letter / Message to Employer (Optional)</label>
+        <textarea id="cover" name="cover"></textarea>
+
+        <label for="skills">Skills / Certifications / Experience (Optional)</label>
+        <textarea id="skills" name="skills"></textarea>
+
+        <!-- Consent -->
+        <div class="checkbox-container">
+            <input type="checkbox" id="consent" name="consent" required>
+            <label for="consent">I confirm that the information provided is accurate and I agree to the processing of my data for recruitment purposes.</label>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit">Submit Application</button>
+    </form>
+
+    <!-- WhatsApp Button -->
+    <div class="whatsapp-button" id="whatsappDiv">
+        <a href="https://wa.me/254745333818" target="_blank">Chat with Agent Amina on WhatsApp</a>
+    </div>
+</div>
+
+<script>
+    // Show WhatsApp button after form submission
+    const form = document.getElementById('jobForm');
+    const whatsappDiv = document.getElementById('whatsappDiv');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault(); // prevent actual form submission for demo
+        alert("Your application has been submitted successfully!");
+        whatsappDiv.style.display = 'block'; // show WhatsApp button
+        form.reset(); // reset the form fields
+    });
+</script>
+</body>
+</html>
